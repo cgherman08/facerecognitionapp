@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ParticlesBg from 'particles-bg'
 import Navigation from './components/Navigation/navigation';
 import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
@@ -8,6 +9,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+       <ParticlesBg type="cobweb" bg={true} />
        <Navigation />
        <Logo />
        <Rank />
