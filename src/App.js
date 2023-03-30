@@ -9,9 +9,9 @@ import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
 import './App.css';
 
-const initialstate = {
+const initialState = {
   input: '',
-  imageU: '',
+  imageUrl: '',
   box: {},
   route: 'signin',
   isSignedIn: false,
@@ -27,7 +27,7 @@ const initialstate = {
 class App extends Component { 
   constructor() {
     super();
-    this.state = initialstate;
+    this.state = initialState;
   }
 
   loadUser = (data) => {
@@ -45,7 +45,7 @@ class App extends Component {
     const image = document.getElementById('inputimage');
     const width = Number(image.width);
     const height = Number(image.height); 
-    return{
+    return {
       leftCol: clarifaiFace.left_col * width, 
       topRow: clarifaiFace.top_row * height,
       rightCol: width - (clarifaiFace.right_col * width),
@@ -93,8 +93,8 @@ class App extends Component {
   } 
 
     onRouteChange = (route) => {
-      if ( route === 'signout') {
-        this.setState(initialstate)
+      if (route === 'signout') {
+        this.setState(initialState)
       } else if (route === 'home') {
         this.setState({isSignedIn: true})
       }
